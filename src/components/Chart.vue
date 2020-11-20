@@ -1,7 +1,9 @@
 <template>
   <div class="chart">
-    <doughnut-chart :chart-data="data" :heigth="50" :options="options">
+    <doughnut-chart :chartdata="chart_data" :options="options" class="chart_d">
     </doughnut-chart>
+
+    <img src="../img/Logo.png" alt="Neurosoft" class="img_logo" />
   </div>
 </template>
 
@@ -13,37 +15,39 @@ export default {
   components: {
     DoughnutChart,
   },
-  data: () => {
-    return {
-      labels: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
-      datasets: [
-        {
-          backgroundColor: '#ffffff',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11],
-        },
-      ],
-    }
+  props: {
+    chart_data: {
+      type: Object,
+      default: () => {
+        return {}
+      },
+    },
   },
-  options: () => {
-    return {
+  data: () => ({
+    loading: true,
+    chartdata: null,
+    options: {
       responsive: true,
       maintainAspectRatio: true,
-    }
-  },
+    },
+  }),
 }
 </script>
 
-<style></style>
+<style>
+.chart {
+  position: relative;
+  padding-top: 15px;
+  padding-left: 265px;
+  width: 609px;
+}
+.chart_d {
+  position: absolute;
+  width: 70%;
+}
+.img_logo {
+  position: absolute;
+  padding-top: 230px;
+  padding-left: 230px;
+}
+</style>

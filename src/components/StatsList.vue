@@ -7,15 +7,19 @@
     </div>
     <div class="body">
       <body-header
-        :quantity_data="number_data"
         v-for="item in quantity_data"
         :key="item.id"
         :number_data="item"
       />
       <p class="header_title">По департаментам</p>
       <div class="body_info">
-        <chart />
-        <div class="line"></div>
+        <chart :chart_data="chart_data" />
+        <div class="line"><div class="line_horisont"></div></div>
+        <div class="line_vertical"></div>
+        <div class="line_dots">
+          <div class="line_dot dot_1"></div>
+          <div class="line_dot dot_2"></div>
+        </div>
         <body-stats-list :departments_data="departments_data" />
       </div>
     </div>
@@ -56,6 +60,12 @@ export default {
       type: Array,
       default: () => {
         return []
+      },
+    },
+    chart_data: {
+      type: Object,
+      default: () => {
+        return {}
       },
     },
   },
@@ -127,5 +137,43 @@ export default {
 }
 .body {
   padding-bottom: 100px;
+}
+.line {
+  position: relative;
+}
+.line_horisont {
+  top: 50%;
+  width: 55px;
+  border-top: 3px solid #c1c3c8;
+  padding-left: 15px;
+  margin-right: 0;
+}
+.line_vertical {
+  margin-left: -38px;
+  width: 50px;
+  border-top: 3px solid #c1c3c8;
+  border-left: 3px solid #c1c3c8;
+  border-bottom: 3px solid #c1c3c8;
+  border-radius: 4px;
+}
+.line_dots {
+  position: relative;
+  width: 8px;
+  margin-right: -60px;
+}
+.line_dot {
+  background: #c1c3c8;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin-left: -40px;
+}
+.dot_1 {
+  position: absolute;
+  top: -0.45%;
+}
+.dot_2 {
+  position: absolute;
+  bottom: -0.45%;
 }
 </style>

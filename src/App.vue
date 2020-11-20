@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <stats-list :quantity_data="QUANTITY" :departments_data="DEPARTMENTS" />
+    <stats-list
+      :chart_data="CHARTDATA"
+      :quantity_data="QUANTITY"
+      :departments_data="DEPARTMENTS"
+    />
   </div>
 </template>
 
@@ -16,12 +20,13 @@ export default {
   mounted() {
     this.GET_QUANTITY()
     this.GET_DEPARTMENTS()
+    this.GET_CHARTDATA()
   },
   methods: {
-    ...mapActions(['GET_QUANTITY', 'GET_DEPARTMENTS']),
+    ...mapActions(['GET_QUANTITY', 'GET_DEPARTMENTS', 'GET_CHARTDATA']),
   },
   computed: {
-    ...mapGetters(['QUANTITY', 'DEPARTMENTS']),
+    ...mapGetters(['QUANTITY', 'DEPARTMENTS', 'CHARTDATA']),
   },
 }
 </script>
@@ -47,7 +52,6 @@ export default {
   position: relative;
   margin: 0 auto;
   width: 1920px;
-  height: 1397px;
   background-color: #ffffff;
 }
 </style>

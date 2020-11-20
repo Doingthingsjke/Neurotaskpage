@@ -42,6 +42,7 @@ export default {
   align-items: center;
   justify-content: left;
   width: 800px;
+  padding-bottom: 5px;
 }
 .body_info_list--stats {
   padding-left: 23px;

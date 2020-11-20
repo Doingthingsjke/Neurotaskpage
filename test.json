@@ -7,6 +7,28 @@
       "couples": "9"
     }
   ],
+
+  "chartdata": {
+    "datasets": [
+      {
+        "data": [12, 19, 3, 5, 2, 3],
+        "backgroundColor": [
+          "#2B78FE",
+          "#8295FA",
+          "#FFBB49",
+          "#87D227",
+          "#20CBAC",
+          "#01B0D7",
+          "#6235B0",
+          "#9559FF",
+          "#C055D1",
+          "#FF7979"
+        ],
+        "borderWidth": 0
+      }
+    ]
+  },
+
   "departments": [
     {
       "title": "Администрация",

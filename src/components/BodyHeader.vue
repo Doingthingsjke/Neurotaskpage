@@ -6,11 +6,11 @@
     </div>
     <div class="body_stats--total">
       <div class="body_stats_big">{{ number_data.males }}</div>
-      <div class="body_stats_big--info">Мужчины</div>
+      <div class="body_stats_big--info">Мужчин</div>
     </div>
     <div class="body_stats--total">
       <div class="body_stats_big">{{ number_data.females }}</div>
-      <div class="body_stats_big--info">Женщины</div>
+      <div class="body_stats_big--info">Женщин</div>
     </div>
     <div class="body_stats--total">
       <div class="body_stats_big">{{ number_data.couples }}</div>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'BodyHeader',
   props: {
@@ -29,6 +31,12 @@ export default {
         return {}
       },
     },
+  },
+  mounted() {
+    // const keys = this.GET_KEYS_FROM_QUANTITY(this.number_data)
+  },
+  methods: {
+    ...mapActions(['GET_KEYS_FROM_QUANTITY']),
   },
 }
 </script>
