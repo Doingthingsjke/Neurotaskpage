@@ -25,7 +25,7 @@ export default {
   },
   data: () => ({
     loading: true,
-    chartdata: null,
+    chartdata: this.chart_data,
     options: {
       responsive: true,
       maintainAspectRatio: true,

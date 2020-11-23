@@ -129,7 +129,7 @@ export default {
   justify-content: center;
 }
 .img_1 {
-  padding-top: 4px;
+  padding-top: 3px;
 }
 .body_info {
   display: flex;
@@ -142,6 +142,7 @@ export default {
   position: relative;
 }
 .line_horisont {
+  position: absolute;
   top: 50%;
   width: 55px;
   border-top: 3px solid #c1c3c8;
@@ -149,7 +150,7 @@ export default {
   margin-right: 0;
 }
 .line_vertical {
-  margin-left: -38px;
+  margin-left: 36px;
   width: 50px;
   border-top: 3px solid #c1c3c8;
   border-left: 3px solid #c1c3c8;

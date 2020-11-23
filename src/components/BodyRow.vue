@@ -23,12 +23,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$colors: #2b78fe, #8295fa, #ffbb49, #87d227, #20cbac, #01b0d7, #6235b0, #9559ff,
+  #c055d1, #ff7979;
+
 .circle {
-  background: #456bd9;
+  background: #2b78fe;
   border-radius: 50%;
   height: 2em;
   width: 2em;
+
+  // @each $color in $colors {
+  //   &-#{$color} {
+  //     background: $color;
+  //   }
+  // }
 }
 .list {
   list-style-type: none;
